@@ -13,3 +13,19 @@ class EnemyAI {
         attack.execute(enemy, player);
     }
 }
+
+//Enemy types
+
+class Goblin extends Enemy {
+
+    public Goblin() {
+        super("Goblin", 60);
+    }
+}
+
+class Dragon extends Enemy {
+
+    public Dragon() {
+        super("Dragon", 200);
+    }
+}
