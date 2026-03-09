@@ -1,27 +1,42 @@
-public class Character {
+class Character {
+
     protected String name;
-    protected int hp;
-    protected int maxHp;
+    protected int health;
 
-    public Character(String name, int maxHp){
+    public Character(String name, int health) {
         this.name = name;
-        this.maxHp = maxHp;
-        this.hp = maxHp;
+        this.health = health;
     }
 
-    public boolean isAlive(){ return hp > 0; }
-
-    public void takeDamage(int dmg){
-        hp -= dmg;
-        if(hp < 0) hp = 0;
+    public boolean isAlive() {
+        return health > 0;
     }
+}
 
-    public void heal(int amount){
-        hp += amount;
-        if(hp > maxHp) hp = maxHp;
+class Player extends Character {
+
+    public Player(String name, int health) {
+        super(name, health);
     }
+}
 
-    public String getStatus(){
-        return name + " HP: " + hp + "/" + maxHp;
+class Enemy extends Character {
+
+    public Enemy(String name, int health) {
+        super(name, health);
+    }
+}
+
+class Goblin extends Enemy {
+
+    public Goblin() {
+        super("Goblin", 60);
+    }
+}
+
+class Dragon extends Enemy {
+
+    public Dragon() {
+        super("Dragon", 200);
     }
 }
